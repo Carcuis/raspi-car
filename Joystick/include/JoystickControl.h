@@ -33,9 +33,9 @@ struct Rocker
     double get_distance() const;
 
     // percentage
-    double get_percent_x() const;
-    double get_percent_y() const;
-    double get_percent_distance() const;
+    double get_percent_x(bool with_sign = false) const;
+    double get_percent_y(bool with_sign = false) const;
+    double get_percent_distance(bool with_sign = false) const;
 };
 
 class JoystickControl

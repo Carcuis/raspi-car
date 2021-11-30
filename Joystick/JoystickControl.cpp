@@ -87,17 +87,20 @@ double Rocker::get_distance() const
     return sqrt(pow(this->x_value, 2) + pow(this->y_value, 2));
 }
 
-double Rocker::get_percent_x() const
+double Rocker::get_percent_x(bool with_sign) const
 {
-    return fmin(fabs((float)this->x_value / (float)this->max_value) * 100, 100);
+    double percent = fmax(fmin((float)this->x_value / (float)this->max_value * 100, 100), -100);
+    return with_sign ? percent : fabs(percent);
 }
 
-double Rocker::get_percent_y() const
+double Rocker::get_percent_y(bool with_sign) const
 {
-    return fmin(fabs((float)this->y_value / (float)this->max_value) * 100, 100);
+    double percent = fmax(fmin((float)this->y_value / (float)this->max_value * 100, 100), -100);
+    return with_sign ? percent : fabs(percent);
 }
 
-double Rocker::get_percent_distance() const
+double Rocker::get_percent_distance(bool with_sign) const
 {
-    return fmin(fabs(this->get_distance() / this->max_value) * 100, 100);
+    double percent = fmax(fmin(this->get_distance() / this->max_value * 100, 100), -100);
+    return with_sign ? percent : fabs(percent);
 }
