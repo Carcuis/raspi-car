@@ -1,4 +1,4 @@
-add_library(Controller STATIC Controller.cpp)
+add_library(Controller STATIC ChassisControl.cpp ArmControl.cpp)
 
 target_include_directories(Controller PUBLIC include)
 

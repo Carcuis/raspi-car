@@ -1,9 +1,6 @@
-#include <iostream>
+#include "Controller.h"
 #include "JoystickControl.h"
 #include "Utilities.h"
-#include "Controller.h"
-
-using namespace std;
 
 int main(int argc, char *argv[])
 {

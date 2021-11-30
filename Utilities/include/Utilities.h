@@ -14,14 +14,14 @@ using namespace std;
 
 struct PinSet
 {
-    int w_lf_1 = 23; // wheel left front
-    int w_lf_2 = 24;
+    int w_rr_1 = 7;
+    int w_rr_2 = 0;
     int w_rf_1 = 2;
     int w_rf_2 = 3;
     int w_lr_1 = 21;
     int w_lr_2 = 22;
-    int w_rr_1 = 7;
-    int w_rr_2 = 0;
+    int w_lf_1 = 23; // wheel left front
+    int w_lf_2 = 24;
 
     int a_up_1   = 26;
     int a_up_2   = 27;

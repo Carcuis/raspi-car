@@ -76,3 +76,28 @@ void JoystickControl::parse_event()
         }
     }
 }
+
+double Rocker::get_angle() const
+{
+    return atan2(this->y_value, this->x_value) * 57.3;
+}
+
+double Rocker::get_distance() const
+{
+    return sqrt(pow(this->x_value, 2) + pow(this->y_value, 2));
+}
+
+double Rocker::get_percent_x() const
+{
+    return fmin(fabs((float)this->x_value / (float)this->max_value) * 100, 100);
+}
+
+double Rocker::get_percent_y() const
+{
+    return fmin(fabs((float)this->y_value / (float)this->max_value) * 100, 100);
+}
+
+double Rocker::get_percent_distance() const
+{
+    return fmin(fabs(this->get_distance() / this->max_value) * 100, 100);
+}
