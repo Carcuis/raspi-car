@@ -16,6 +16,7 @@ void Utilities::init()
     signal(SIGQUIT, stop_progress);
 
     setup_gpio();
+//    namedWindow("window");
 }
 
 void Utilities::stop_progress(int sign)
@@ -45,5 +46,5 @@ void Utilities::reset_gpio(int sign)
     {
         pinMode(*p++, INPUT);
     }
-    cout << "\nGPIO reset due to sign: " << sign << endl;
+    cout << "\rGPIO reset due to sign: " << sign << endl;
 }

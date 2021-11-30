@@ -21,7 +21,8 @@ void JoystickControl::setup_joystick()
 
 void JoystickControl::sample()
 {
-    usleep(1000);
+//    usleep(1000);
+    waitKey(1);
     if (!joystick.sample(&event))
     {
 //        if (!this->joystick.isFound())
@@ -75,6 +76,18 @@ void JoystickControl::parse_event()
                 break;
         }
     }
+}
+
+void JoystickControl::draw_position() const
+{
+    static uint8_t count = 0;
+    if (count % 10 == 0)
+    {
+        Mat canvas = Mat::zeros(200, 200, CV_8UC1);
+        circle(canvas, Point(R_RS.get_percent_x(true) + 100, -R_RS.get_percent_y(true) + 100), 2, 255);
+        imshow("window", canvas);
+    }
+    count++;
 }
 
 double Rocker::get_angle() const

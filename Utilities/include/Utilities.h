@@ -7,9 +7,11 @@
 
 #include <csignal>
 #include <iostream>
+#include <opencv2/opencv.hpp>
 #include "wiringPi.h"
 #include "Joystick.hpp"
 
+using namespace cv;
 using namespace std;
 
 struct PinSet

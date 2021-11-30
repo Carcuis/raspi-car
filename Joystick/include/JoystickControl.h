@@ -9,10 +9,12 @@
 #include <iostream>
 #include <vector>
 #include <unistd.h>
+#include <opencv2/opencv.hpp>
 #include "wiringPi.h"
 #include "Joystick.hpp"
 #include "Utilities.h"
 
+using namespace cv;
 using namespace std;
 
 struct Button
@@ -43,6 +45,7 @@ class JoystickControl
 public:
     JoystickControl();
     void sample();
+    void draw_position() const;
 
     bool toggle_exit = false;
 

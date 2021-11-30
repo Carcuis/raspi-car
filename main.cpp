@@ -19,6 +19,8 @@ int main(int argc, char *argv[])
             arm_controller.control(js_controller);
         }
 
+//        js_controller.draw_position();
+
         if (js_controller.toggle_exit)
             break;
     }
