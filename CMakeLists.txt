@@ -7,6 +7,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(EXECUTABLE_OUTPUT_PATH "${CMAKE_CURRENT_SOURCE_DIR}/bin")
 
 find_library(WIRINGPI_LIBRARIES NAMES wiringPi)
+find_package(OpenCV 4 REQUIRED)
 find_package(Threads REQUIRED)
 
 add_subdirectory(Controller)
